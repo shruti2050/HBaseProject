@@ -1,0 +1,42 @@
+﻿        # ============================================================
+# Containerized HBase with Hadoop — Storage System
+# Internship Project #7
+# ============================================================
+# Start:   docker compose up -d
+# Stop:    docker compose down
+# Logs:    docker logs hbase-master
+# Shell:   docker exec -it hbase-master hbase shell
+# Thrift:  auto-started by this image on port 9090
+
+# Web UI:  http://localhost:16010
+# ============================================================
+
+services:
+  hbase:
+    # harisekhon/hbase:2.1 runs a fully self-contained HBase in
+    # standalone mode — includes ZooKeeper, Master, RegionServer,
+    # Thrift server, and REST server all in one container.
+    # No external Hadoop or ZooKeeper needed.
+    image: harisekhon/hbase:2.1
+    container_name: hbase-master
+    hostname: hbase-master
+
+    ports:
+      - "2181:2181"   # ZooKeeper client port (coordination)
+      - "16000:16000" # HBase Master RPC (internal cluster comms)
+      - "16010:16010" # HBase Master Web UI → http://localhost:16010
+      - "16020:16020" # RegionServer RPC (data read/write)
+      - "16030:16030" # RegionServer Web UI
+      - "9090:9090"   # Thrift API → used by Python happybase client
+      - "9095:9095"   # Thrift2 API (newer protocol, not used here)
+
+    volumes:
+      # Named volume persists HBase data across container restarts.
+      # Without this, all data is lost when the container stops.
+      - hbase_data:/tmp
+
+# Named volume definition — Docker manages the storage location.
+# Data survives: docker compose down
+# Data wiped:    docker compose down -v   (use carefully!)
+volumes:
+  hbase_data:

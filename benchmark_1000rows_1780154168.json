@@ -1,0 +1,29 @@
+{
+  "run_at": "2026-05-30T20:46:08.015340",
+  "results": [
+    {
+      "operation": "WRITE",
+      "num_rows": 1000,
+      "total_elapsed_s": 1.1418,
+      "throughput_rps": 875.84,
+      "latency_mean_ms": 1.1061,
+      "latency_median_ms": 0.0097,
+      "latency_p95_ms": 5.8441,
+      "latency_p99_ms": 9.9854,
+      "latency_min_ms": 0.005,
+      "latency_max_ms": 22.7783
+    },
+    {
+      "operation": "READ",
+      "num_rows": 1000,
+      "total_elapsed_s": 0.0756,
+      "throughput_rps": 13233.74,
+      "latency_mean_ms": 0.0009,
+      "latency_median_ms": 0.0008,
+      "latency_p95_ms": 0.0014,
+      "latency_p99_ms": 0.0019,
+      "latency_min_ms": 0.0007,
+      "latency_max_ms": 0.003
+    }
+  ]
+}
