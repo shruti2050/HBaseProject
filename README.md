@@ -245,4 +245,4 @@ exit
 
 ---
 
-*SETU Project-Zoho Corporation · Project #7 · Batch 2027*
+*SETU Project-Zoho Corporation  · Batch 2027*
