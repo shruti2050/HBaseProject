@@ -1,5 +1,5 @@
 # Containerized HBase with Hadoop — Storage System
-### SETU Project-Based Internship · Zoho Corporation · Project #7 · Batch 2027
+### SETU Project· Zoho Corporation · Project #7 · Batch 2027
 
 A fully containerised Apache HBase storage system deployed via Docker Compose, benchmarked with a Python workload simulator, and verified with real analytics data.
 
